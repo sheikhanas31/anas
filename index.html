@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anas | Professional Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap');
+        
+        :root {
+            --primary: 234 179 8; /* Gold accent */
+        }
+        
+        .tail-container {
+            font-family: 'Inter', system-ui, sans-serif;
+        }
+        
+        .hero-bg {
+            background: linear-gradient(135deg, #0f172a 0%, #1e2937 100%);
+        }
+        
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: rgb(234 179 8);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        
+        .section-title {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background: rgb(234 179 8);
+            bottom: -8px;
+            left: 0;
+        }
+        
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+        }
+    </style>
+</head>
+<body class="tail-container bg-slate-950 text-slate-200">
+    <!-- Navbar -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-slate-950/90 backdrop-blur-lg border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-9 h-9 bg-yellow-400 rounded-2xl flex items-center justify-center text-slate-950 font-bold text-2xl">A</div>
+                <span class="font-semibold text-2xl tracking-tight">Anas</span>
+            </div>
+            
+            <div class="hidden md:flex items-center gap-10 text-sm font-medium">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            
+            <div class="flex items-center gap-4">
+                <a href="#contact" 
+                   class="px-6 py-3 bg-yellow-400 hover:bg-yellow-300 transition-colors text-slate-950 font-semibold rounded-2xl text-sm flex items-center gap-2">
+                    <i class="fa-solid fa-paper-plane"></i>
+                    Get in touch
+                </a>
+                <button onclick="toggleMobileMenu()" 
+                        class="md:hidden w-11 h-11 flex items-center justify-center text-2xl">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-slate-950 border-t border-slate-800 py-6">
+            <div class="flex flex-col px-6 gap-6 text-lg font-medium">
+                <a href="#about" onclick="toggleMobileMenu()" class="nav-link">About</a>
+                <a href="#services" onclick="toggleMobileMenu()" class="nav-link">Services</a>
+                <a href="#experience" onclick="toggleMobileMenu()" class="nav-link">Experience</a>
+                <a href="#projects" onclick="toggleMobileMenu()" class="nav-link">Projects</a>
+                <a href="#contact" onclick="toggleMobileMenu()" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero-bg min-h-screen flex items-center pt-20">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+            <div class="space-y-8">
+                <div class="inline-flex items-center gap-2 bg-slate-800/50 px-4 py-2 rounded-3xl text-sm">
+                    <div class="w-3 h-3 bg-emerald-400 rounded-full animate-pulse"></div>
+                    Available for freelance • Lahore, Pakistan
+                </div>
+                
+                <h1 class="text-7xl md:text-8xl font-bold leading-none tracking-tighter">
+                    Hi, I'm <span class="text-yellow-400">Anas</span>
+                </h1>
+                
+                <p class="text-2xl md:text-3xl text-slate-400 max-w-lg">
+                    Software Engineer &amp; AI Specialist building digital experiences that matter.
+                </p>
+                
+                <div class="flex items-center gap-4">
+                    <a href="#contact" 
+                       class="px-8 py-4 bg-yellow-400 hover:bg-yellow-300 transition-all text-slate-950 font-semibold rounded-3xl flex items-center gap-3 group">
+                        Let's work together
+                        <span class="group-active:rotate-45 transition-transform">→</span>
+                    </a>
+                    
+                    <a href="#projects" 
+                       class="px-8 py-4 border border-slate-400 hover:border-white transition-all font-medium rounded-3xl">
+                        View my work
+                    </a>
+                </div>
+                
+                <div class="flex items-center gap-8 text-sm pt-6">
+                    <div>
+                        <div class="text-yellow-400 text-4xl font-semibold">50+</div>
+                        <div class="text-slate-400">Projects delivered</div>
+                    </div>
+                    <div>
+                        <div class="text-yellow-400 text-4xl font-semibold">12</div>
+                        <div class="text-slate-400">Countries served</div>
+                    </div>
+                    <div>
+                        <div class="text-yellow-400 text-4xl font-semibold">4.9</div>
+                        <div class="text-slate-400">Client rating</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="relative">
+                <div class="absolute -inset-10 bg-gradient-to-br from-yellow-400/10 to-transparent rounded-[4rem] blur-3xl"></div>
+                <img src="https://picsum.photos/id/64/800/1000" 
+                     alt="Anas - Professional Portrait"
+                     class="rounded-[3rem] shadow-2xl border-8 border-slate-800 object-cover h-[620px] w-full">
+                
+                <!-- Floating badge -->
+                <div class="absolute -bottom-6 -right-6 bg-slate-900 border border-slate-700 rounded-3xl px-6 py-4 shadow-xl flex items-center gap-4">
+                    <div class="text-emerald-400">
+                        <i class="fa-solid fa-circle-check text-4xl"></i>
+                    </div>
+                    <div>
+                        <div class="font-semibold">Open to opportunities</div>
+                        <div class="text-xs text-slate-400">Full-time • Contract • Consulting</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-xs tracking-widest opacity-60">
+            SCROLL TO EXPLORE
+            <div class="w-px h-12 bg-gradient-to-b from-transparent via-slate-400 to-transparent"></div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="py-28 bg-slate-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-12 gap-16 items-center">
+                <div class="md:col-span-5">
+                    <div class="sticky top-28">
+                        <div class="uppercase text-yellow-400 text-sm tracking-[3px] font-medium mb-3">CHAPTER 01</div>
+                        <h2 class="section-title text-6xl font-semibold tracking-tight">About me</h2>
+                        <p class="mt-10 text-slate-400 leading-relaxed text-lg">
+                            With over 7 years of experience in software engineering and AI, I help ambitious businesses turn ideas into scalable digital products.
+                        </p>
+                        <div class="mt-8 flex gap-6">
+                            <a href="#" class="flex items-center gap-2 text-sm hover:text-yellow-400 transition-colors">
+                                <i class="fa-brands fa-linkedin text-xl"></i>
+                                LinkedIn
+                            </a>
+                            <a href="#" class="flex items-center gap-2 text-sm hover:text-yellow-400 transition-colors">
+                                <i class="fa-brands fa-github text-xl"></i>
+                                GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:col-span-7 space-y-10 text-lg leading-relaxed text-slate-300">
+                    <p>
+                        I'm a Lahore-based software engineer passionate about building intelligent systems that solve real-world problems. 
+                        My expertise spans full-stack development, machine learning, and cloud architecture.
+                    </p>
+                    <p>
+                        Previously at <span class="text-yellow-400 font-medium">TechNova Solutions</span> and <span class="text-yellow-400 font-medium">Pakistan AI Labs</span>, 
+                        I've delivered solutions for fintech, healthcare, and e-commerce clients across Asia and the Middle East.
+                    </p>
+                    
+                    <div class="pt-8 border-t border-slate-800 grid grid-cols-2 gap-8">
+                        <div>
+                            <div class="uppercase text-xs tracking-widest text-slate-500 mb-4">Core Skills</div>
+                            <ul class="space-y-3 text-sm">
+                                <li class="flex items-center gap-3"><span class="text-yellow-400">→</span> Python, TypeScript, Go</li>
+                                <li class="flex items-center gap-3"><span class="text-yellow-400">→</span> React, Next.js, Django</li>
+                                <li class="flex items-center gap-3"><span class="text-yellow-400">→</span> TensorFlow, LangChain</li>
+                                <li class="flex items-center gap-3"><span class="text-yellow-400">→</span> AWS, Docker, Kubernetes</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div class="uppercase text-xs tracking-widest text-slate-500 mb-4">Education</div>
+                            <div class="space-y-6">
+                                <div>
+                                    <div class="font-medium">B.Sc. Computer Science</div>
+                                    <div class="text-sm text-slate-400">LUMS • 2018 – 2022</div>
+                                </div>
+                                <div>
+                                    <div class="font-medium">Google Professional ML Engineer</div>
+                                    <div class="text-sm text-slate-400">2024</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="py-28 bg-slate-950">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <div class="uppercase text-yellow-400 text-sm tracking-[3px]">WHAT I OFFER</div>
+                <h2 class="section-title text-6xl font-semibold tracking-tight mt-3">Services</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="card-hover bg-slate-900 border border-slate-800 rounded-3xl p-10 group">
+                    <div class="w-16 h-16 bg-yellow-400/10 flex items-center justify-center rounded-2xl mb-8 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-laptop-code text-4xl text-yellow-400"></i>
+                    </div>
+                    <h3 class="text-3xl font-semibold mb-4">Full-Stack Development</h3>
+                    <p class="text-slate-400">Modern web &amp; mobile applications using cutting-edge frameworks. From MVP to enterprise-scale systems.</p>
+                    <div class="mt-8 text-xs uppercase tracking-widest text-slate-500">Tech stack: Next.js • Django • Flutter</div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="card-hover bg-slate-900 border border-slate-800 rounded-3xl p-10 group">
+                    <div class="w-16 h-16 bg-yellow-400/10 flex items-center justify-center rounded-2xl mb-8 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-brain text-4xl text-yellow-400"></i>
+                    </div>
+                    <h3 class="text-3xl font-semibold mb-4">AI &amp; Machine Learning</h3>
+                    <p class="text-slate-400">Custom AI solutions, RAG systems, computer vision, and intelligent automation for your business.</p>
+                    <div class="mt-8 text-xs uppercase tracking-widest text-slate-500">LangChain • OpenAI • TensorFlow</div>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="card-hover bg-slate-900 border border-slate-800 rounded-3xl p-10 group">
+                    <div class="w-16 h-16 bg-yellow-400/10 flex items-center justify-center rounded-2xl mb-8 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-cloud text-4xl text-yellow-400"></i>
+                    </div>
+                    <h3 class="text-3xl font-semibold mb-4">Cloud &amp; DevOps</h3>
+                    <p class="text-slate-400">Scalable infrastructure, CI/CD pipelines, and cloud-native architecture on AWS, GCP &amp; Azure.</p>
+                    <div class="mt-8 text-xs uppercase tracking-widest text-slate-500">Kubernetes • Terraform • Docker</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="py-28 bg-slate-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-12 gap-16">
+                <div class="md:col-span-5">
+                    <div class="uppercase text-yellow-400 text-sm tracking-[3px]">CHAPTER 02</div>
+                    <h2 class="section-title text-6xl font-semibold tracking-tight mt-3">Experience</h2>
+                </div>
+                <div class="md:col-span-7 space-y-16">
+                    <!-- Exp 1 -->
+                    <div class="flex flex-col md:flex-row gap-8">
+                        <div class="md:w-48 text-sm text-slate-400 shrink-0">
+                            <div class="font-medium text-slate-200">2024 – Present</div>
+                            <div>Senior AI Engineer</div>
+                            <div class="text-yellow-400">Pakistan AI Labs • Lahore</div>
+                        </div>
+                        <div class="flex-1">
+                            <p class="text-lg">Leading development of enterprise RAG systems and computer vision solutions serving 200k+ monthly users.</p>
+                            <ul class="mt-4 space-y-2 text-sm text-slate-400 list-disc pl-5">
+                                <li>Built production LLM agent platform (reduced query cost by 68%)</li>
+                                <li>Architected scalable MLOps pipeline on Kubernetes</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Exp 2 -->
+                    <div class="flex flex-col md:flex-row gap-8">
+                        <div class="md:w-48 text-sm text-slate-400 shrink-0">
+                            <div class="font-medium text-slate-200">2022 – 2024</div>
+                            <div>Software Engineer II</div>
+                            <div class="text-yellow-400">TechNova Solutions • Remote</div>
+                        </div>
+                        <div class="flex-1">
+                            <p class="text-lg">Developed fintech platform handling $42M+ in annual transactions with 99.99% uptime.</p>
+                            <ul class="mt-4 space-y-2 text-sm text-slate-400 list-disc pl-5">
+                                <li>Full-stack ownership of payment gateway</li>
+                                <li>Implemented fraud detection ML model (accuracy 97.3%)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="py-28 bg-slate-950">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex items-end justify-between mb-12">
+                <div>
+                    <div class="uppercase text-yellow-400 text-sm tracking-[3px]">CHAPTER 03</div>
+                    <h2 class="section-title text-6xl font-semibold tracking-tight">Selected Projects</h2>
+                </div>
+                <a href="#" class="hidden md:flex items-center gap-3 text-sm group">
+                    View all work 
+                    <span class="block w-8 h-px bg-slate-400 group-hover:bg-yellow-400 transition-colors"></span>
+                </a>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Project Card -->
+                <div class="group bg-slate-900 rounded-3xl overflow-hidden border border-slate-800 hover:border-yellow-400/30 transition-all">
+                    <div class="h-80 bg-slate-800 relative">
+                        <img src="https://picsum.photos/id/201/800/600" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute top-6 right-6 bg-slate-950/80 backdrop-blur px-4 py-1.5 text-xs rounded-3xl">Fintech</div>
+                    </div>
+                    <div class="p-8">
+                        <div class="font-semibold text-2xl mb-2">PayFlow — Digital Banking</div>
+                        <div class="text-slate-400 text-sm">Next.js • Go • PostgreSQL • AWS</div>
+                        <p class="mt-6 text-slate-300">Complete digital banking platform with real-time transactions, KYC automation, and AI fraud detection.</p>
+                    </div>
+                </div>
+                
+                <div class="group bg-slate-900 rounded-3xl overflow-hidden border border-slate-800 hover:border-yellow-400/30 transition-all">
+                    <div class="h-80 bg-slate-800 relative">
+                        <img src="https://picsum.photos/id/251/800/600" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute top-6 right-6 bg-slate-950/80 backdrop-blur px-4 py-1.5 text-xs rounded-3xl">AI SaaS</div>
+                    </div>
+                    <div class="p-8">
+                        <div class="font-semibold text-2xl mb-2">DocuMind — Intelligent Document AI</div>
+                        <div class="text-slate-400 text-sm">React • Python • LangChain • Pinecone</div>
+                        <p class="mt-6 text-slate-300">AI-powered document analysis platform used by 40+ law firms in Pakistan &amp; UAE.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-28 bg-slate-900">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center">
+                <div class="uppercase text-yellow-400 text-sm tracking-[3px] mb-4">CHAPTER 04 — FINAL</div>
+                <h2 class="text-6xl font-semibold tracking-tight">Let's build something<br>extraordinary together</h2>
+            </div>
+            
+            <form id="contactForm" class="mt-16 space-y-8 max-w-xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <label class="block text-sm uppercase tracking-widest text-slate-400 mb-2">Name</label>
+                        <input type="text" id="name" 
+                               class="w-full bg-transparent border border-slate-700 focus:border-yellow-400 rounded-3xl px-6 py-5 outline-none transition-colors"
+                               placeholder="Your full name">
+                    </div>
+                    <div>
+                        <label class="block text-sm uppercase tracking-widest text-slate-400 mb-2">Email</label>
+                        <input type="email" id="email" 
+                               class="w-full bg-transparent border border-slate-700 focus:border-yellow-400 rounded-3xl px-6 py-5 outline-none transition-colors"
+                               placeholder="you@company.com">
+                    </div>
+                </div>
+                
+                <div>
+                    <label class="block text-sm uppercase tracking-widest text-slate-400 mb-2">Message</label>
+                    <textarea id="message" rows="6"
+                              class="w-full bg-transparent border border-slate-700 focus:border-yellow-400 rounded-3xl px-6 py-5 outline-none transition-colors resize-none"
+                              placeholder="Tell me about your project..."></textarea>
+                </div>
+                
+                <button type="submit"
+                        class="w-full py-6 bg-yellow-400 hover:bg-amber-300 transition-colors text-slate-950 font-bold text-lg rounded-3xl flex items-center justify-center gap-3 group">
+                    SEND MESSAGE
+                    <span class="group-active:translate-x-3 transition">→</span>
+                </button>
+            </form>
+            
+            <div class="text-center text-xs text-slate-500 mt-12">
+                Or email me directly at <a href="mailto:anas@example.com" class="hover:text-yellow-400">anas@proton.me</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 border-t border-slate-800 py-16">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="flex items-center justify-center gap-3 mb-8">
+                <div class="w-8 h-8 bg-yellow-400 rounded-2xl flex items-center justify-center text-slate-950 font-bold">A</div>
+                <span class="font-medium">Anas © 2026</span>
+            </div>
+            <p class="text-xs text-slate-500">Made with ❤️ in Lahore, Pakistan</p>
+        </div>
+    </footer>
+
+    <script>
+        // Tailwind script already loaded via CDN
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu')
+            menu.classList.toggle('hidden')
+        }
+        
+        // Simple form handling (demo)
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault()
+            const btn = this.querySelector('button')
+            const originalText = btn.innerHTML
+            
+            btn.innerHTML = `
+                <svg class="animate-spin h-5 w-5 text-slate-950" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
+                </svg>
+            `
+            setTimeout(() => {
+                alert("✅ Thank you! Your message has been received. I'll reply within 24 hours.")
+                btn.innerHTML = originalText
+                this.reset()
+            }, 1800)
+        })
+        
+        // Smooth scrolling for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if (this.getAttribute('href') === '#') return
+                e.preventDefault()
+                const target = document.querySelector(this.getAttribute('href'))
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    })
+                }
+            })
+        })
+        
+        // Keyboard shortcut hint (optional fun)
+        console.log('%c👋 Professional website ready! Press "/" to focus search (demo)', 'color:#eab308; font-size:10px')
+    </script>
+</body>
+</html>
